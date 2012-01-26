@@ -25,7 +25,5 @@ describe Status do
     end
   end
 
+
 end
-
-
-

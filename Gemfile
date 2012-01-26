@@ -37,5 +37,12 @@ gem 'jquery-rails'
 # To use debugger
 # gem 'ruby-debug19', :require => 'ruby-debug'
 
-gem 'rspec'
 gem 'acts_as_commentable'
+gem 'therubyracer'
+
+group :test, :development do
+  gem 'rspec-rails'
+  gem 'database_cleaner'
+  gem 'cucumber-rails'
+end
+

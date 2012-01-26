@@ -44,5 +44,6 @@ group :test, :development do
   gem 'rspec-rails'
   gem 'database_cleaner'
   gem 'cucumber-rails'
+  gem 'object-factory', :require => 'object_factory'
 end
 

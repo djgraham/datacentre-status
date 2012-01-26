@@ -80,6 +80,8 @@ GEM
     mime-types (1.17.2)
     multi_json (1.0.4)
     nokogiri (1.5.0)
+    object-factory (0.2.4)
+      rujitsu
     polyglot (0.3.3)
     rack (1.4.1)
     rack-cache (1.1)
@@ -120,6 +122,7 @@ GEM
       railties (>= 3.0)
       rspec (~> 2.8.0)
     rubyzip (0.9.5)
+    rujitsu (0.3.3)
     sass (3.1.12)
     sass-rails (3.2.3)
       railties (~> 3.2.0.beta)
@@ -159,6 +162,7 @@ DEPENDENCIES
   cucumber-rails
   database_cleaner
   jquery-rails
+  object-factory
   rails (= 3.2.0)
   rspec-rails
   sass-rails (~> 3.2.3)

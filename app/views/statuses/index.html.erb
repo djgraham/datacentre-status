@@ -1,0 +1,26 @@
+<h1>Statuses</h1> <%= link_to("New", new_status_path) %>
+
+<% if @statuses.size > 0 %>
+  <table>
+    <tr>
+      <th>
+          Name
+      </th>
+      <th>
+          Colour code
+      </th>
+    </tr>
+    <% @statuses.each do |s| %>
+      <tr>
+        <td>
+          <%= link_to(s.name, edit_status_path(s)) %>
+        </td>
+        <td>
+          #<%= s.colour %>
+        </td>
+      </tr>
+    <% end %>
+<% else %>
+  No statuses to show at present
+<% end %>
+  </table>

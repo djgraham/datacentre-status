@@ -1,0 +1,10 @@
+<%= semantic_form_for @status do |f| %>
+
+  <%= f.semantic_errors :state %>
+
+  <%= f.input :name %>
+  <%= f.input :colour %>
+
+  <%= f.submit %>
+
+<% end %>

@@ -39,6 +39,7 @@ gem 'jquery-rails'
 
 gem 'acts_as_commentable'
 gem 'therubyracer'
+gem 'formtastic'
 
 group :test, :development do
   gem 'rspec-rails'

@@ -13,3 +13,6 @@
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
+
+# Ignore vim's temporay swap files. If I had $1 everytime I've committed one of these!
+*.swp

@@ -2,6 +2,7 @@ MelbourneStatus::Application.routes.draw do
 
 namespace :admin do
   resources :statuses
+  resources :events
 end
   # The priority is based upon order of creation:
   # first created -> highest priority.

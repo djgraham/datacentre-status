@@ -1,0 +1,24 @@
+<h1>Events</h1>
+
+<%= link_to "Add new event", new_admin_event_path %>
+
+<% if @events.size > 0 %>
+  <table>
+    <thead>
+      <th>Title</th>
+      <th>Status</th>
+      <th>Scheduled at</th>
+      <th>Resolved?</th>
+    </thead>
+    <tbody>
+      <% @events.each do |event| %>
+        <tr>
+          <td><%= link_to event.title, edit_admin_event_path(event) %></td>
+          <td><%= event.status.try(:name) %></td>
+          <td><%= event.scheduled_at %></td>
+          <td><%= event.resolved? ? "Y" : "N" %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% end %>

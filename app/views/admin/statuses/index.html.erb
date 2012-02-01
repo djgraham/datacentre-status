@@ -1,5 +1,7 @@
 <h1>Statuses</h1>
 
+<%= link_to new_admin_status_path, "Add new status" %>
+
 <% if @statuses.size > 1 %>
   <table>
     <thead>
@@ -9,7 +11,7 @@
     <tbody>
       <% @statuses.each do |status| %>
         <tr>
-          <td><%= link_to edit_admin_status(status), status.name %></td>
+          <td><%= link_to status.name, edit_admin_status_path(status) %></td>
           <td>#<%= status.colour %></td>
         </tr>
       <% end %>

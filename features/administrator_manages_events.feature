@@ -1,0 +1,9 @@
+Feature: Administrator manages events
+
+  Background: 
+    Given I am logged in as an administrator
+    And there are events within the system
+
+#  Scenario: ...
+#    When...
+#    Then ...

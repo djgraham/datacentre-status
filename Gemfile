@@ -46,5 +46,6 @@ group :test, :development do
   gem 'database_cleaner'
   gem 'cucumber-rails'
   gem 'object-factory', :require => 'object_factory'
+  gem 'launchy'
 end
 

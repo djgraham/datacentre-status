@@ -1,0 +1,18 @@
+<h1>Statuses</h1>
+
+<% if @statuses.size > 1 %>
+  <table>
+    <thead>
+      <th>Status name</th>
+      <th>Colour code</th>
+    </thead>
+    <tbody>
+      <% @statuses.each do |status| %>
+        <tr>
+          <td><%= link_to edit_admin_status(status), status.name %></td>
+          <td>#<%= status.colour %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% end %>

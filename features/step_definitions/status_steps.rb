@@ -12,6 +12,7 @@ When /^I visit the administrator statuses page$/ do
 end
 
 When /^I click "([^"]*)"$/ do |arg1|
+  @status = Status.find_by_name arg1
   visit "/admin/statuses/#{@status.id}/edit"
 end
 
@@ -21,6 +22,7 @@ When /^I assign resolved flag$/ do
 end
 
 Then /^"([^"]*)" should have a resolved flag$/ do |arg1|
+  @status = Status.find_by_name arg1
   @status.should be_resolved
 end
 
@@ -30,6 +32,7 @@ When /^I revoke resolved flag$/ do
 end
 
 Then /^"([^"]*)" should not have a resolved flag$/ do |arg1|
+  @status = Status.find_by_name arg1
   @status.should_not be_resolved
 end
 

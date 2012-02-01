@@ -1,18 +1,20 @@
 <h1>Statuses</h1>
 
-<%= link_to new_admin_status_path, "Add new status" %>
+<%= link_to "Add new status", new_admin_status_path %>
 
 <% if @statuses.size > 1 %>
   <table>
     <thead>
       <th>Status name</th>
       <th>Colour code</th>
+      <th>Resolved?</th>
     </thead>
     <tbody>
       <% @statuses.each do |status| %>
         <tr>
           <td><%= link_to status.name, edit_admin_status_path(status) %></td>
           <td>#<%= status.colour %></td>
+          <td><%= status.resolved? ? "Y" : "N" %></td>
         </tr>
       <% end %>
     </tbody>

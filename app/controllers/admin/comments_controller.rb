@@ -2,7 +2,7 @@ class Admin::CommentsController < ApplicationController
 
   before_filter :load_event#, :except => [:index, :new, :create]
   before_filter :load_comment, :except => [:index, :new, :create]
-  respond_to :html
+  #respond_to :html
 
   def index
     @comments = @event.comments
@@ -30,6 +30,8 @@ class Admin::CommentsController < ApplicationController
   end
 
   def create
+    @event.update_attribute(:status_id, params[:comment][:event_attributes][:status_id])
+    params[:comment].delete(:event_attributes) # = nil # = {:id => params[:event_id]}
     @comment = @event.comments.new(params[:comment])
     if @comment.save
       redirect_to admin_event_comments_path(@event), :flash => { :info => "Comment created" }

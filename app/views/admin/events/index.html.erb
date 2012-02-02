@@ -13,7 +13,7 @@
     <tbody>
       <% @events.each do |event| %>
         <tr>
-          <td><%= link_to event.title, admin_event_path(event) %></td>
+          <td><%= link_to event.title, admin_event_comments_path(event) %></td>
           <td><%= event.status.try(:name) %></td>
           <td><%= event.scheduled_at %></td>
           <td><%= event.resolved? ? "Y" : "N" %></td>

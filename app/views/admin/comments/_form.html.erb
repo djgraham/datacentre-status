@@ -1,0 +1,13 @@
+<%= semantic_form_for [:admin, @event, @comment] do |f| %>
+
+  <%= f.inputs do %>
+    <%= f.input :content%>
+  <% end %>
+  <%= f.semantic_fields_for :event do |e| %>
+    <%= e.input :status %>
+  <% end %>
+  <%= f.buttons do %>
+    <%= f.commit_button 'Add comment' %>
+  <% end %>
+
+<% end %>

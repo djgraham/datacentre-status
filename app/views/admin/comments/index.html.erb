@@ -1,0 +1,15 @@
+<h1>Comments for <%= @event.title %></h1>
+<p><%= @event.content %></p>
+Last updated: <%= @event.updated_at %>
+
+<% if @comments.size > 0 %>
+  <ul>
+    <% @comments.each do |comment| %>
+      <li><%= link_to comment.content, edit_admin_event_comment_path(@event, comment) %>
+        <span class="date"><%= comment.updated_at %></span>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= render :partial => "form" %>

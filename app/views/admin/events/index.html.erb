@@ -17,6 +17,9 @@
           <td><%= event.status.try(:name) %></td>
           <td><%= event.scheduled_at %></td>
           <td><%= event.resolved? ? "Y" : "N" %></td>
+          <td><%= link_to "Edit", edit_admin_event_path(event) %></td>
+          <td><%= link_to "Remove", admin_event_path(event), :method => :delete %></td>
+
         </tr>
       <% end %>
     </tbody>

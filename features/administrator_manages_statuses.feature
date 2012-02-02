@@ -7,17 +7,17 @@ Feature: Administrator manages statuses
   Scenario: Making a status a resolved status flag
 
     When I visit the administrator statuses page
-    And I click "test_status"
+    And I click status "test_status"
     And I assign resolved flag
     Then "test_status" should have a resolved flag
 
   Scenario: Revoking resolved status flag
 
     When I visit the administrator statuses page
-    And I click "test_status"
+    And I click status "test_status"
     And I assign resolved flag
     When I visit the administrator statuses page
-    And I click "test_status"
+    And I click status "test_status"
     And I revoke resolved flag
     Then "test_status" should not have a resolved flag
 

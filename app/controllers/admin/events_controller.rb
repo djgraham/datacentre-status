@@ -11,6 +11,10 @@ class Admin::EventsController < ApplicationController
 
   end
 
+  def show
+
+  end
+
   def new
     @event = Event.new
   end
@@ -30,6 +34,11 @@ class Admin::EventsController < ApplicationController
     else
       render :action => :edit
     end
+  end
+
+  def destroy
+    @event.destroy
+      redirect_to admin_events_path, :flash => { :info => "Event deleted" }
   end
 
   protected

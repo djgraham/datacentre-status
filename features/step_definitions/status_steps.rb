@@ -11,7 +11,7 @@ When /^I visit the administrator statuses page$/ do
   visit "/admin/statuses"
 end
 
-When /^I click "([^"]*)"$/ do |arg1|
+When /^I click status "([^"]*)"$/ do |arg1|
   @status = Status.find_by_name arg1
   visit "/admin/statuses/#{@status.id}/edit"
 end

@@ -2,9 +2,25 @@
 
 A clone of Melbourne Status - http://www.melbournestatus.co.uk
 
+## DONE
+
+* basic admin area
+* statuses
+* Events
+* Comments 
+* CRUD a comment updates the event updated_at
+* Update an event to a status with "resolved" flag sets that event as resolved
+
+
 ## TODO
 
-* lots
+
+* Twitter bootstrap css & layout
+* RSS feed
+* front end status page :(
+
+
+
 
 ## LICENCE
 

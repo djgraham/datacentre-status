@@ -14,11 +14,17 @@ A clone of Melbourne Status - http://www.melbournestatus.co.uk
 
 ## TODO
 
-
 * Twitter bootstrap css & layout
 * RSS feed
 * front end status page :(
 
+
+
+## FUTURE FEATURES
+
+# Integrate with twitter (automatic tweet using background job or other)
+# Oauth or similar for administrators - allow a personalisation of each comment/event posted
+# Subscribe to an event status for customers - enter an email and then "subscribed" to that event and all updates
 
 
 

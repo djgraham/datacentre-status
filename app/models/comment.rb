@@ -4,4 +4,6 @@ class Comment < ActiveRecord::Base
 
   accepts_nested_attributes_for :event
 
+  validates_presence_of :content
+
 end

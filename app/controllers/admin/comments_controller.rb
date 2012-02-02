@@ -1,6 +1,6 @@
 class Admin::CommentsController < ApplicationController
 
-  before_filter :load_event#, :except => [:index, :new, :create]
+  before_filter :load_event
   before_filter :load_comment, :except => [:index, :new, :create]
   #respond_to :html
 
@@ -30,8 +30,10 @@ class Admin::CommentsController < ApplicationController
   end
 
   def create
+    # hack to update the event if the status changes other wise belongs to barfs
     @event.update_attribute(:status_id, params[:comment][:event_attributes][:status_id])
-    params[:comment].delete(:event_attributes) # = nil # = {:id => params[:event_id]}
+    params[:comment].delete(:event_attributes) 
+    # carry on with the usual here
     @comment = @event.comments.new(params[:comment])
     if @comment.save
       redirect_to admin_event_comments_path(@event), :flash => { :info => "Comment created" }
@@ -42,7 +44,7 @@ class Admin::CommentsController < ApplicationController
 
   def destroy
     @comment.destroy
-      redirect_to admin_event_comments_path(@event), :flash => { :info => "Comment deleted" }
+    redirect_to admin_event_comments_path(@event), :flash => { :info => "Comment deleted" }
   end
 
 

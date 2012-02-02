@@ -5,13 +5,27 @@
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
+  <%= stylesheet_link_tag    "/css/bootstrap.css", :media => "all" %>
 </head>
 <body>
 
-<%= flash[:info] %>
-<%= flash[:warning] %>
 
-<%= yield %>
+<%= render :partial => "shared/navigation" %>
+
+<div class="container" >
+
+
+  <% if flash[:info] %>
+    <%= flash[:info] %>
+  <% end %>
+  <% if flash[:warning] %>
+    <%= flash[:warning] %>
+  <% end %>
+
+  <%= yield %>
+
+
+</div>
 
 </body>
 </html>
